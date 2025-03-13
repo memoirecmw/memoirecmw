@@ -19,7 +19,7 @@
 }
 
 body {
-    background-color: #f0f8ff;
+    background-color: #E5EBF8;
     display: flex;
     font-family: "Montserrat", sans-serif;
     justify-content: center;
@@ -48,12 +48,11 @@ body {
 .login-container input[type="email"],
 .login-container input[type="text"],
 .login-container input[type="password"] {
-    /*width: calc(100% - 22px);*/
     padding: 10px;
     margin-bottom: 20px;
     border: 0px solid #ddd;
     box-sizing: border-box;
-    font-size: 16px;
+/*    font-size: 16px;*/
 }
 
 .login-container button {
@@ -64,12 +63,12 @@ body {
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
+/*    font-size: 16px;*/
 
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+    background-color: #779BDD;
 }
 
 .error-message {
@@ -81,6 +80,7 @@ body {
 .login-container form {
     padding: 20px;
     border-radius: 20px;
+    margin:0px;
 }
 
 input[type="text"],
@@ -92,7 +92,7 @@ textarea {
     margin: 5px 0; /* Marges uniforme en haut et en bas */
     border: 0px solid #ccc;
     border-radius: 20px;
-    font-size: 16px;
+/*    font-size: 16px;*/
     font-family: Montserrat-Italic;
     color: #333;
     background-color: #F4F4F4;
@@ -104,7 +104,7 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #779BDD;
 }
 
 textarea {
@@ -116,5 +116,4 @@ select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
