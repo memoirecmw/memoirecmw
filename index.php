@@ -10,7 +10,7 @@
     <?php include 'includes/calendar.php'; ?>
 <?php include "includes/todo.php";?>
 <?php include "includes/notepad.php";?>
-
+<div>Test</div>
 </main>
 <?php include "includes/include_script.php";?>
 </body>
