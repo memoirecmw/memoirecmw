@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-$test = false;
 $note = null;
 $errorMessage = null;
 
