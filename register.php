@@ -12,7 +12,7 @@ include "includes/popup.php";?>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mémoire CMW - INSCRIPTION</title>
     <link rel="stylesheet" href="css/login.css">
-    <?php include "includes/include_script.php";?>
+
 </head>
 <body>
 <div class="login-container">
@@ -50,6 +50,7 @@ include "includes/popup.php";?>
 
 </form>
 </div>
+<?php include "includes/include_script.php";?>
 </body>
 
 </html>

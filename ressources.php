@@ -1,7 +1,7 @@
 <?php include "includes/header.php";?>
 <title>Ressources</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<?php include "includes/include_script.php";?>
+
 </head>
 <body>
 <?php include 'includes/nav.php'; ?>
@@ -47,7 +47,7 @@ if ($categories_ressources) {
 </div>
 
     </main>
-    
+<?php include "includes/include_script.php";?>
   </body>
   
 

@@ -2,7 +2,7 @@
 ?>
 <title>Bibliographie</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<?php include "includes/include_script.php";?>
+
 </head>
 <body>
 <?php include 'includes/nav.php'; ?>
@@ -10,6 +10,7 @@
 <?php include "includes/module_depot.php"?>
     <?php include "includes/archive.php" ?>
 </main>
+<?php include "includes/include_script.php";?>
   </body>
   
 

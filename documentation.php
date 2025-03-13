@@ -1,7 +1,6 @@
 <?php include "includes/header.php";?>
 <title>Documentation</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<?php include "includes/include_script.php";?>
 </head>
 <body>
 <?php include 'includes/nav.php'; ?>
@@ -44,10 +43,6 @@
         </div>
     </div>
 </main>
-
-<script>
-
-</script>
-
+<?php include "includes/include_script.php";?>
 </body>
 </html>

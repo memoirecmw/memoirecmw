@@ -1,7 +1,6 @@
 <?php include "includes/header.php"?>
 <title>Profil</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<?php include "includes/include_script.php";?>
 </head>
 <body>
 <?php include 'includes/nav.php'; ?>
@@ -23,6 +22,7 @@
         <button type="submit">Déconnexion</button>
     </form>
 </main>
+<?php include "includes/include_script.php";?>
   </body>
   
 
