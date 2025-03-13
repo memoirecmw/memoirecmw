@@ -1,0 +1,706 @@
+@font-face {
+  font-family: "Barlow";
+  src: url('../font/Barlow-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Barlow-Light";
+  src: url('../font/Barlow-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('../font/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Montserrat-Italic";
+  src: url('../font/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+
+/*----------------------GÉNÉRAL----------------*/
+
+body{
+  background-color:white;
+  margin : 0;
+  font-family:"Montserrat";
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+h1{
+  font-family:"Montserrat";
+  font-weight: 400;
+  font-size:1.3rem;
+  margin:30px;
+}
+
+h2{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+
+button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #E5EBF8;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+/*----------------------BARRE DE NAVIGATION----------------*/
+
+nav {
+  font-family: "Barlow-Light";
+  width: max(300px, 17vw);
+  height: 100%;
+  background-color: #373737;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  z-index: 1000;
+}
+
+.profil {
+  position: absolute;
+  left: 0.5em;
+  bottom: 1em;
+  font-size: 1.2em;
+  padding: 0.6em 1em;
+  border-radius: 20px;
+  width: calc(100% - 3em);
+  transition: background-color 0.1s ease-in-out; /* Transition ajoutée ici */
+}
+
+.li-nav {
+  list-style-type: none;
+  padding-inline-start: 1em;
+  padding-top: 0.6em;
+  margin-bottom: 0.5em;
+  height: 2em;
+  border-radius: 18px;
+  transition: background-color 0.1s ease-in-out; /* Transition ajoutée ici */
+}
+
+.profil:hover,
+.li-nav:hover {
+  background-color: #779BDD;
+}
+
+.icon {
+  width: 1.1em;
+  height: auto;
+  margin-right: 0.7em;
+  vertical-align: middle;
+}
+
+ul {
+  padding-inline-start: 0.5em;
+  padding-inline-end: 0.5em;
+  font-size: 1em;
+}
+
+hr {
+  width: 90%;
+  border-radius: 20px;
+  border: 0.9px solid white;
+}
+
+a {
+  text-decoration: none;
+  color: white; /* Couleur du texte pour les liens */
+}
+
+/* Pas besoin de répéter nav>a, nav>ul>a, etc. */
+
+#rendus-nav {
+  display: none; /* Masquer le sous-menu par défaut */
+  padding-inline-start: 1.7em;
+  padding-inline-end: 0em;
+}
+
+/* Styles pour le sous-menu actif */
+#rendus:hover #rendus-nav,
+#rendus-nav:hover {
+  display: block;
+}
+
+nav ul li a.active,
+nav ul li.active {
+  background-color: #779BDD;
+}
+/*----------------------BLOC MAIN CONTENT----------------*/
+
+main:not(.rendu):not(.profile-cont) {
+
+/*  margin-left: 250px;
+  width: calc(100% - 250px);*/
+  min-height: 100vh;
+  background-color: white;
+  overflow-x: hidden;
+/*  display:flex;*/
+}
+
+main{
+  margin-left: max(300px, 17vw);
+  width: calc(100% - max(300px, 16vw));
+  /*  margin-left: 250px;
+    width: calc(100% - 250px);*/
+  background-color: white;
+  overflow-x: hidden;
+  /*  display:flex;*/
+}
+.main-center{
+  display:flex;
+  justify-content:center;
+  flex-direction : row;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+
+.main-content{
+    margin:4rem;
+}
+/*-------------------- PROFIL -----------------------------*/
+.profile-cont{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.profile-details{
+  width: 100%;
+  display: flex;
+}
+.avatar{
+  width: 20%;
+}
+.profile-details h3{
+  width: 70%;
+}
+/*----------------------DOCUMENTATION----------------------*/
+
+.documentation {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+  border-left: 0.2em solid black;
+  padding-bottom: 3em;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.fleche::after,
+.fleche::before {
+  content: "";
+  position: absolute;
+  bottom: -0.7em; /* Place les traits sous la bordure */
+  left: -0.3em; /* Ajuste l'alignement avec la bordure */
+  width: 1em;
+  height: 1em;
+  border-top: 0.2em solid black; /* Ligne supérieure */
+}
+
+.fleche::after {
+  transform: rotate(45deg); /* Diagonale vers la droite */
+  left: -1.25em;
+}
+
+.fleche::before {
+  transform: rotate(-45deg); /* Diagonale vers la gauche */
+  left: 0.05em;
+}
+
+.documentation a {
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  background-color: #E5EBF8;
+  color: black;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.documentation a:hover {
+  background-color: #779BDD;
+}
+
+/*----------------------RESSOURCES----------------------*/
+
+.ressources {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9em;
+}
+
+.ressources a {
+  display: inline-block;
+  width: auto;
+  font-size: 0.9em;
+  padding: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  background-color: #FFEFC6;
+  color: black;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.ressources a:hover {
+  background-color: #FFCA41;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #E5EBF8;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+
+}
+
+
+/*----------------------RENDU FICHE ----------------*/
+.rendu-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: #F4F4F4;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 0;
+  min-height: 0;
+}
+
+.upload-area {
+  border: 0;
+  text-align: center;
+  width: 15vw; /* Ajustez la largeur selon vos besoins */
+  height: 15vw; /* Ajustez la hauteur selon vos besoins */
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.upload-label {
+  cursor: pointer;
+}
+
+.upload-input {
+  display: none;
+}
+
+.rendu-info {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sujet-input {
+  font-family: Montserrat-Italic;
+
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.submit-button {
+  font-family: "Montserrat", sans-serif;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 20px;
+  align-self: center;
+}
+
+/* Styles spécifiques pour l'icône de téléchargement */
+.upload-area i {
+  font-size: 3em; /* Ajustez la taille de l'icône selon vos besoins */
+  color: #999; /* Couleur de l'icône */
+}
+
+/* Styles spécifiques pour le champ de saisie du sujet */
+.sujet-input::placeholder {
+  color: #999; /* Couleur du placeholder */
+}
+
+/* Styles spécifiques pour le nom du fichier déjà rendu */
+#fichierRendu {
+  font-family: "Montserrat", sans-serif;
+  color: #333; /* Couleur du texte */
+  margin-bottom: 20px;
+}
+
+/* Styles spécifiques pour le bouton "Envoyer" */
+.submit-button:hover {
+  background-color: #555; /* Couleur de fond au survol */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .rendu-info {
+    width: 100%;
+  }
+}
+
+#drop-area.highlight {
+  border: 2px dashed #007bff; /* Exemple de style actif */
+}
+
+#file-name {
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+#drop-area.highlight {
+  border: 2px dashed #007bff;
+
+}
+/* ------------------- ARCHIVE -------------------*/
+.archive-cont{
+  width: 100%;
+  min-height: 50%;
+  margin-left: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  min-height: 0;
+}
+.titreArchive{
+
+  width: 100%;
+
+  padding: 10px;
+  text-decoration: underline;
+}
+.filtre-annees {
+  width: 100%;
+
+  display: flex;
+}
+.filtre-annees a {
+  padding: 10px 10px;
+  margin-right: 5px;
+  text-decoration: none;
+  background-color: #E5EBF8;
+  border-radius: 20px;
+}
+
+.filtre-annees a.active {
+  background-color: #779BDD;
+  color: white;
+}
+.resultats-rendus{
+  width: 100%;
+}
+.resultats-rendus ul {
+  list-style-type: disc;
+  padding: 0;
+  margin-left: 2em;
+
+}
+
+.resultats-rendus li {
+  margin-bottom: 10px;
+}
+
+.pdf-link {
+  background-color: #e0f7fa; /* Couleur de fond claire */
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #00796b; /* Couleur du texte */
+  margin-left: 10px; /* Marge à gauche */
+
+}
+
+.pdf-link:hover {
+  background-color: #b2ebf2; /* Couleur de fond au survol */
+}
+
+.etudiantID{
+  display: inline;
+  font-weight: bold;
+}
+/*------------------ NOTE PAD --------------------*/
+#userNote:disabled {
+  background-color: #E5EBF8;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+}
+#notepadTitle{
+  font-family: Montserrat-Italic;
+  font-weight: normal;
+  color: #81848c;
+  font-size:1.1rem;
+}
+
+#userNote {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.notepad {
+  width: calc(100% - 200px); /* Largeur totale - largeur de la barre latérale - marge */
+  min-height: 30vh; /* 80% de la hauteur de l'écran */
+  border: 0 solid #ccc;
+  padding: 20px;
+  background-color:#E5EBF8;
+  border-radius: 20px;
+}
+
+.notepad textarea {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  height: calc(100% - 40px); /* Hauteur du bloc-notes - hauteur des boutons */
+  border: none;
+  resize: none; /* Désactive le redimensionnement */
+  outline: none;
+  font-size: 16px;
+  background-color:#E5EBF8;
+}
+.notepad textarea:focus {
+
+  border: none;
+
+}
+
+
+.notepad button {
+  margin-top: 10px;
+  border : 1px solid black;
+}
+/*------------ TO DO LIST -------- */
+.todo-list {
+  width: 500px;
+  height: 50vh;
+  border-radius: 20px;
+  margin: 0 auto;
+  font-family: Montserrat;
+  background-color: #F4F4F4;
+  padding: 20px;
+
+}
+.todo-list {
+  overflow-y: auto; /* Active la barre de défilement sur le conteneur principal */
+}
+
+.scrollable-content {
+  /* Le contenu scrollable ne nécessite pas de hauteur maximale ici */
+}
+
+.group {
+  padding: 20px;
+  background-color: #FFFFFF;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.group h3 {
+  margin-top: 0;
+}
+
+.group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.group li {
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.group li.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.add-task-form, .add-group-form {
+  margin-top: 10px;
+}
+
+#todoTitle {
+  font-family: Montserrat, regular;
+  font-weight: 600;
+  color: black;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 15px;
+}
+
+h3[contenteditable="true"],
+li[contenteditable="true"] {
+  cursor: pointer;
+}
+.group {
+  position: relative;
+}
+
+.delete-group {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  display: none; /* Masquer par défaut */
+}
+
+.group:hover .delete-group {
+  display: block; /* Afficher au survol */
+}
+
+/*---------- Calendrier */
+.calendrier {
+
+  width: 500px;
+  height: 50vh;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 0 auto;
+                          }
+
+.calendrier table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendrier th, .calendrier td {
+  border: 1px solid #eee;
+  padding: 8px;
+  text-align: center;
+}
+
+.calendrier td.rendu {
+  background-color: #f0f8ff;
+}
+
+.rendus-jour {
+  margin-top: 5px;
+}
+
+.rendu-item {
+  background-color: #e0e0e0;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+.error-message {
+  color: red;
+  text-align: left;
+}
+
+/*--------------- DOCU POPUP-----*/
+
+.popup {
+  display: none;
+  position: absolute;
+  z-index: 1001;
+  width: 70%;
+  max-height: 80vh; /* Ajuster la hauteur maximale selon vos besoins */
+  border-radius: 20px;
+}
+.popup-content-inner{
+ padding: 20px; background-color: white; border-radius: 10px;
+}
+.popup-title{
+  font-weight: 700;
+  font-size: 20px;
+  padding : 1em;
+}
+.popup-content {
+  background-color: #E5EBF8;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #888;
+  
+  position: relative;
+}
+
+.popup-text {
+  font-size: 12px;
+  overflow-y: auto; /* Défilement vertical uniquement */
+  overflow-x: hidden; /* Masquer le défilement horizontal */
+  max-height: 60vh; /* Ajustez la hauteur maximale du texte selon vos besoins */
+}
+.main-content-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur et opacité de l'overlay */
+  z-index: 50; /* Assurez-vous qu'il est au-dessus du contenu */
+  display: none; /* Masqué par défaut */
+}
+.close-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+
+/*---------------------- NOTIFICATIONS ----------------- */
+#notification-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#notification-container.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+#notification-container.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
