@@ -32,7 +32,7 @@ include "includes/validate_registrationEnseignant.php"; ?>
     <label for="prenomEnseignant"></label>
     <input type="text" id="prenomEnseignant" name="prenomEnseignant" placeholder="Prénom" required><br>
 
-    <label for="mdpEnseignantEnseignant"></label>
+    <label for="mdpEnseignant"></label>
     <input type="password" id="mdpEnseignant" name="mdpEnseignant" placeholder="Mot de passe" required><br>
     <label for="cmdpEnseignant"></label>
     <input type="password" id="cmdpEnseignant" name="cmdpEnseignant" placeholder="Confirmation" required><br>
