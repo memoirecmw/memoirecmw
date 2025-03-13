@@ -10,7 +10,7 @@
         <div class="profile-details">
             <img src="avatar.png" alt="Avatar" class="avatar">
             <h3><?php echo strtoupper($_SESSION['nom']). " " .$_SESSION['prenom']; ?></h3>
-            <p><?php echo $email; ?></p>
+            <p><?php echo $email. 'test'; ?></p>
             <?php echo "<pre>";print_r($_SESSION)?>x
             <div class="status-indicator">S</div>
         </div>
