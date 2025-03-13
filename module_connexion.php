@@ -8,7 +8,6 @@ include "connexion.php";
 
 <title>Connexion</title>
 <link rel="stylesheet" href="css/login.css">
-<?php include "includes/include_script.php";?>
 </head>
 <body>
 
@@ -30,5 +29,6 @@ include "connexion.php";
         <button type="submit">Connexion</button>
     </form>
 </div>
+<?php include "includes/include_script.php";?>
 </body>
 </html>
