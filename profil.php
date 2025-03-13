@@ -1,7 +1,7 @@
 <?php include "includes/header.php"?>
 <title>Profil</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
-<?php echo 'test'; include "includes/include_script.php";?>
+<?php include "includes/include_script.php";?>
 </head>
 <body>
 <?php include 'includes/nav.php'; ?>
