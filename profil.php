@@ -12,7 +12,7 @@
             <h3><?php echo strtoupper($_SESSION['nom']). " " .$_SESSION['prenom']; ?></h3>
             <p><?php echo $email; ?></p>
             <?php echo "<pre>";print_r($_SESSION)?>x
-            <div class="status-indicator">S</div>
+            <div class="status-indicator">ziziziS</div>
         </div>
 
 
