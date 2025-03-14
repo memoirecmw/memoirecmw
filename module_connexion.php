@@ -16,17 +16,7 @@ include "includes/popup.php";
 
 <div class="login-container">
     <h2>MÉMOIRE CMW</h2>
- <!-- 
-    session_start();
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        // ... Votre code PHP de traitement du formulaire ...
-        if ($errors > 0) {
-            echo "<div class='error-message'>" . $errors_flag . "</div>";
-        }
-    }
-    ?> -->
-   
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input type="email" name="mail" placeholder="Email" value="<?php echo isset($mail) ? $mail : ''; ?>">
         <input type="password" name="mdp" placeholder="Mot de passe">

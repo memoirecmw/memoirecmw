@@ -26,6 +26,7 @@ if (empty($_POST)) {
     if ($mailExists) {
         $errors += 1;
         $notification_message .= "<br>Le mail '$mailEtudiant' existe déjà dans la base de données. <br>";
+        $notification_type = "error";
     }
 
     //vérifie alphabétique

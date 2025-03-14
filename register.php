@@ -19,13 +19,7 @@ include "includes/popup.php";?>
 <form method="POST" action="
 <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <h2>MÉMOIRE CMW</h2>
-  <?  if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    if ($errors > 0) {
-    echo "<div class='error-message'>" . $errors_flag . "</div>";
-    }else{
-        echo "Tout est bon pour moi !<br>";
-    }
-    } ?>
+
     <label for="mailEtudiant"></label>
     <input type="email" id="mailEtudiant" name="mailEtudiant" placeholder="Email" required><br>
     <label for="nomEtudiant"></label>
@@ -51,6 +45,12 @@ include "includes/popup.php";?>
 </form>
 </div>
 <?php include "includes/include_script.php";?>
+<script>
+    <?php if (isset($_SESSION['notification_message'])) : ?>
+    showNotification("<?php echo $_SESSION['notification_message']; ?>", "<?php echo $_SESSION['notification_type']; ?>");
+    <?php unset($_SESSION['notification_message']); unset($_SESSION['notification_type']); ?>
+    <?php endif; ?>
+</script>  
 </body>
 
 </html>
