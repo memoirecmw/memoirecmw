@@ -137,6 +137,9 @@ nav ul li a.active,
 nav ul li.active {
   background-color: #779BDD;
 }
+
+
+
 /*----------------------BLOC MAIN CONTENT----------------*/
 
 main:not(.rendu):not(.profile-cont) {
@@ -170,6 +173,10 @@ main{
 .main-content{
     margin:4rem;
 }
+
+
+
+
 /*-------------------- PROFIL -----------------------------*/
 .profile-cont{
   display: flex;
