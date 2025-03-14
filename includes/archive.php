@@ -28,7 +28,7 @@ ORDER BY c.nomEtudiant ASC, r.dateRendu DESC;"); // Tri par date décroissante
     // Afficher le titre de la catégorie de rendu
     ?>
         <div class="archive-cont">
-    <div class='titreArchive'>Rendus des étudiants : </div>
+    <h3 class='titreArchive'>Rendus des étudiants : </h3>
  <div class="filtre-annees">
         <?php foreach ($annees as $annee) : ?>
             <a href="?annee=<?php echo $annee; ?>" class="<?php echo $annee == $anneeSelectionnee ? 'active' : ''; ?>"><?php echo $annee; ?></a>

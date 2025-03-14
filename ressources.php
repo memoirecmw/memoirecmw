@@ -17,7 +17,7 @@ $categories_ressources = $query_categories->fetchAll();
 
 if ($categories_ressources) {
     foreach ($categories_ressources as $categorie) {
-        echo "<div><h3>".$categorie['titreCategorieRessources']."</h3>";
+        echo "<div id='bloc-ressources'><h3>".$categorie['titreCategorieRessources']."</h3>";
 
         $query_ressources = $pdo->prepare("SELECT * FROM ressource WHERE idCategorieRessources = ?");
         $query_ressources->execute([$categorie['idCategorieRessources']]);
