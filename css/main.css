@@ -167,7 +167,6 @@ main{
   flex-direction : row;
   flex-wrap: wrap;
   align-items: center;
-
 }
 
 .main-content{
@@ -193,6 +192,11 @@ main{
 .profile-details h3{
   width: 70%;
 }
+
+
+
+
+
 /*----------------------DOCUMENTATION----------------------*/
 
 .documentation {
@@ -250,6 +254,10 @@ main{
   font-size: 0.9em;
 }
 
+#bloc-ressources{
+  margin-bottom:3rem;
+}
+
 .ressources a {
   display: inline-block;
   width: auto;
@@ -267,7 +275,8 @@ main{
 .ressources a:hover {
   background-color: #FFCA41;
 }
-button {
+
+/*button {
   font-family: "Montserrat", sans-serif;
   background-color: #E5EBF8;
   color: black;
@@ -277,14 +286,14 @@ button {
   cursor: pointer;
   font-size: 16px;
 
-}
+}*/
 
 
 /*----------------------RENDU FICHE ----------------*/
 .rendu-container {
-  width: 80%;
+/*  width: 80%;*/
   display: flex;
-  justify-content: space-between;
+/*  justify-content: space-between;*/
   align-items: center;
   padding: 30px;
   background-color: #F4F4F4;
@@ -293,6 +302,7 @@ button {
   justify-content: space-evenly;
   margin-bottom: 0;
   min-height: 0;
+  font-size:0.9em;
 }
 
 .upload-area {
@@ -325,8 +335,7 @@ button {
 
 .sujet-input {
   font-family: Montserrat-Italic;
-
-  width: 80%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -377,7 +386,8 @@ button {
 }
 
 #drop-area.highlight {
-  border: 2px dashed #007bff; /* Exemple de style actif */
+/*  border: 2px solid #779BDD;*/
+  background-color:#E5EBF8;
 }
 
 #file-name {
@@ -389,33 +399,38 @@ button {
 }
 
 #drop-area.highlight {
-  border: 2px dashed #007bff;
+/*  border: 2px solid #779BDD;*/
 
 }
 /* ------------------- ARCHIVE -------------------*/
 .archive-cont{
   width: 100%;
   min-height: 50%;
-  margin-left: 2em;
+/*  margin-left:4rem;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
   min-height: 0;
+  margin:0rem 4rem 4rem 4rem;
+/*  font-size:0.9em;*/
 }
+
 .titreArchive{
-
+  font-size:1em;
+  font-weight:400;
   width: 100%;
-
-  padding: 10px;
+/*  padding: 10px;*/
   text-decoration: underline;
 }
+
 .filtre-annees {
   width: 100%;
-
   display: flex;
+  margin-bottom:1em;
 }
+
 .filtre-annees a {
-  padding: 10px 10px;
+  padding: 5px 10px;
   margin-right: 5px;
   text-decoration: none;
   background-color: #E5EBF8;
@@ -429,11 +444,11 @@ button {
 .resultats-rendus{
   width: 100%;
 }
+
 .resultats-rendus ul {
   list-style-type: disc;
   padding: 0;
-  margin-left: 2em;
-
+  margin-left: 1em;
 }
 
 .resultats-rendus li {
@@ -441,17 +456,17 @@ button {
 }
 
 .pdf-link {
-  background-color: #e0f7fa; /* Couleur de fond claire */
+  background-color: #E5EBF8;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 20px;
   text-decoration: none;
-  color: #00796b; /* Couleur du texte */
+  color: #000000;
   margin-left: 10px; /* Marge à gauche */
-
+  font-size:0.8em;
 }
 
 .pdf-link:hover {
-  background-color: #b2ebf2; /* Couleur de fond au survol */
+  background-color: #779BDD;
 }
 
 .etudiantID{
