@@ -129,17 +129,23 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// NOTIFICATIONS POP
+// NOTIFICATIONS BULLE 
 function showNotification(message, type) {
     const notificationContainer = document.getElementById('notification-container');
-    notificationContainer.textContent = message;
-    notificationContainer.className = 'notification ' + type;
-    notificationContainer.style.opacity = 1;
+    if (notificationContainer) { // Vérifie si l'élément existe
+        notificationContainer.textContent = message;
+        notificationContainer.className = 'notification ' + type;
+        notificationContainer.style.opacity = 1;
 
-    setTimeout(function () {
-        notificationContainer.style.opacity = 0;
-    }, 3000);
+        setTimeout(function () {
+            notificationContainer.style.opacity = 0;
+        }, 3000);
+    } else {
+        console.error('Notification container not found');
+    }
 }
+
+
 // POP UP DOCUMENTATION
 // JavaScript pour gérer la fenêtre pop-up
 document.addEventListener('DOMContentLoaded', function() {

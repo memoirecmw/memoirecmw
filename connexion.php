@@ -11,12 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validation des champs
     if (empty($mail) || empty($mdp)) {
         $errors++;
-        $errors_flag .= "Veuillez remplir tous les champs.<br>";
+       
+        $_SESSION['notification_message'] = "Veuillez remplir tous les champs.";
+        $_SESSION['notification_type'] = "error";
     }
 
     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
         $errors++;
-        $errors_flag .= "Le format de l'email est invalide.<br>";
+        $_SESSION['notification_message'] = "Veuillez remplir un mail valide.";
+        $_SESSION['notification_type'] = "error";
     }
 
     if ($errors === 0) {
@@ -51,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $redirectPage = 'index.php'; // Remplacez par la page de redirection appropriée
             } else {
                 $errors++;
-                $errors_flag .= "Adresse email ou mot de passe incorrect.<br>";
+                $_SESSION['notification_message'] = "Adresse email / mot de passe incorrect.";
+                $_SESSION['notification_type'] = "error";
             }
 
             // 4. Redirection (si connexion réussie)
@@ -62,12 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } catch (PDOException $e) {
             // Gestion des erreurs de la base de données
             $errors++;
-            $errors_flag .= "Erreur lors de la connexion : " . $e->getMessage() . "<br>";
+            $_SESSION['notification_message'] = "Erreur lors de la connexion : " . $e->getMessage() . "<br>";
+            $_SESSION['notification_type'] = "error";
         }
     }
 
-    if ($errors > 0) {
-       // echo "<div style='color:red'>" . $errors_flag . "</div>";
-    }
 }
 ?>

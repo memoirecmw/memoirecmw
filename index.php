@@ -3,6 +3,7 @@
 <title>Accueil</title>
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<?php include "includes/include_script.php";?>
 </head>
 <body>
 <?php include 'includes/nav.php'; ?>
@@ -11,7 +12,7 @@
 <?php include "includes/todo.php";?>
 <?php include "includes/notepad.php";?>
 </main>
-<?php include "includes/include_script.php";?>
+
 </body>
 
 

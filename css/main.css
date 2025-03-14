@@ -626,7 +626,7 @@ li[contenteditable="true"] {
 
 .popup {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1001;
   width: 70%;
   max-height: 80vh; /* Ajuster la hauteur maximale selon vos besoins */

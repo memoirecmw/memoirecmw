@@ -42,9 +42,6 @@ if (isset($_SESSION['user_id'])) {
 </script>
 <div class="notepad">
     <div id="notepadTitle">Bloc-notes</div>
-    <?php if (isset($errorMessage)): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($errorMessage); ?></p>
-    <?php endif; ?>
     <div class="notepad-content">
         <form method="POST">
             <textarea id="userNote" name="note" <?php if (!$note) echo 'placeholder="Saisissez votre note ici..."'; ?>><?php if ($note && $note['descriptionNote']) echo htmlspecialchars($note['descriptionNote']); ?></textarea>

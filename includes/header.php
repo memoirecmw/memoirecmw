@@ -15,7 +15,7 @@ $page_active = basename($_SERVER['PHP_SELF']);
 $rendu_pages = ['rendu-fiche-validation.php', 'rendu-bibliographie.php', 'rendu-fiche-terrain.php', 'rendu-plan.php'];
 $is_rendu_page = in_array($page_active, $rendu_pages);
 include "includes/isconnected.php";
-include "includes/popup.php"
+include "includes/popup.php";
 ?>
 
 
