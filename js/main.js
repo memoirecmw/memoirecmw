@@ -147,64 +147,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('popup');
     const popupContentInner = document.getElementById('popup-content-inner');
     const closeButton = document.querySelector('.close-button');
-    const mainContent = document.querySelector('.main-content');
-    const mainContentOverlay = document.createElement('div'); // Créer l'overlay
+    const mainContentOverlay = document.createElement('div');
 
-    mainContentOverlay.classList.add('main-content-overlay'); // Ajouter la classe
-    mainContent.appendChild(mainContentOverlay); // Ajouter l'overlay à main-content
+    mainContentOverlay.classList.add('main-content-overlay');
+    document.body.appendChild(mainContentOverlay);
 
     docLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const docTitle = this.getAttribute('data-title');
-            const docId = this.getAttribute('data-id');
             const docDescription = this.getAttribute('data-description');
-           // const examplesJson = this.getAttribute('data-examples');
-          //  const examples = JSON.parse(examplesJson); // Convertir JSON en tableau
 
-            // Afficher les exemples avec leurs titres
-        /*    let examplesHtml = '';
-            examples.forEach(example => {
-                examplesHtml += `
-                    <div>
-                        <h3>${example.titreExemple}</h3>
-                        <a href="${example.lienExemple}" target="_blank">Ouvrir le PDF</a>
-                    </div>  
-                `;
-            });*/
-
-            // Charge le contenu de la documentation dans la fenêtre pop-up
             popupContentInner.innerHTML = `
-    <div class="popup-title">${docTitle}</div>   
-    <div class="popup-content-inner"">
-       
-        <div class="popup-text">
-            <div>${docDescription}</div>
-           
-        </div>
-    </div>
-`;
+                <div class="popup-title">${docTitle}</div>   
+                <div class="popup-text">${docDescription}</div>
+            `;
             popup.style.display = 'block';
-
-            // Positionne la fenêtre pop-up par rapport à mainContent
-            popup.style.top = mainContent.offsetTop + (mainContent.offsetHeight - popup.offsetHeight) / 2 + 'px';
-            popup.style.left = mainContent.offsetLeft + (mainContent.offsetWidth - popup.offsetWidth) / 2 + 'px';
-
-            // Afficher l'overlay
             mainContentOverlay.style.display = 'block';
         });
     });
 
     closeButton.addEventListener('click', function() {
         popup.style.display = 'none';
-        // Masquer l'overlay
         mainContentOverlay.style.display = 'none';
     });
 
     window.addEventListener('click', function(event) {
-        if (event.target === popup) {
+        if (event.target === mainContentOverlay) {
             popup.style.display = 'none';
-            // Masquer l'overlay
             mainContentOverlay.style.display = 'none';
         }
     });

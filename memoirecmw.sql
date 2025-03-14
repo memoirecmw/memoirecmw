@@ -2,10 +2,10 @@
 -- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 13, 2025 at 12:43 AM
--- Server version: 5.7.24
--- PHP Version: 7.4.16
+-- Hôte : localhost:3306
+-- Généré le : jeu. 13 mars 2025 à 15:36
+-- Version du serveur : 5.7.24
+-- Version de PHP : 8.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `memoirecmw`
+-- Base de données : `memoirecmw`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bloc_note`
+-- Structure de la table `bloc_note`
 --
 
 CREATE TABLE `bloc_note` (
@@ -34,16 +34,17 @@ CREATE TABLE `bloc_note` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `bloc_note`
+-- Déchargement des données de la table `bloc_note`
 --
 
 INSERT INTO `bloc_note` (`idNote`, `descriptionNote`, `idCompteEtudiant`) VALUES
-(6, 'Saki prout prout', 59);
+(6, 'Saki ', 59),
+(7, '', 64);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie_documentation`
+-- Structure de la table `categorie_documentation`
 --
 
 CREATE TABLE `categorie_documentation` (
@@ -52,7 +53,7 @@ CREATE TABLE `categorie_documentation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categorie_documentation`
+-- Déchargement des données de la table `categorie_documentation`
 --
 
 INSERT INTO `categorie_documentation` (`idCategorieDocumentation`, `titreCategorieDocumentation`) VALUES
@@ -64,7 +65,7 @@ INSERT INTO `categorie_documentation` (`idCategorieDocumentation`, `titreCategor
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie_rendu`
+-- Structure de la table `categorie_rendu`
 --
 
 CREATE TABLE `categorie_rendu` (
@@ -73,7 +74,7 @@ CREATE TABLE `categorie_rendu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categorie_rendu`
+-- Déchargement des données de la table `categorie_rendu`
 --
 
 INSERT INTO `categorie_rendu` (`idCategorieRendu`, `titreCategorieRendu`) VALUES
@@ -88,7 +89,7 @@ INSERT INTO `categorie_rendu` (`idCategorieRendu`, `titreCategorieRendu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorie_ressources`
+-- Structure de la table `categorie_ressources`
 --
 
 CREATE TABLE `categorie_ressources` (
@@ -97,7 +98,7 @@ CREATE TABLE `categorie_ressources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `categorie_ressources`
+-- Déchargement des données de la table `categorie_ressources`
 --
 
 INSERT INTO `categorie_ressources` (`idCategorieRessources`, `titreCategorieRessources`) VALUES
@@ -109,7 +110,7 @@ INSERT INTO `categorie_ressources` (`idCategorieRessources`, `titreCategorieRess
 -- --------------------------------------------------------
 
 --
--- Table structure for table `compte_etudiant`
+-- Structure de la table `compte_etudiant`
 --
 
 CREATE TABLE `compte_etudiant` (
@@ -124,7 +125,7 @@ CREATE TABLE `compte_etudiant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `compte_etudiant`
+-- Déchargement des données de la table `compte_etudiant`
 --
 
 INSERT INTO `compte_etudiant` (`idCompteEtudiant`, `prenomEtudiant`, `nomEtudiant`, `mailEtudiant`, `mdpEtudiant`, `anneePromotion`, `actif`, `groupeEtudiant`) VALUES
@@ -196,7 +197,7 @@ INSERT INTO `compte_etudiant` (`idCompteEtudiant`, `prenomEtudiant`, `nomEtudian
 -- --------------------------------------------------------
 
 --
--- Table structure for table `documentation`
+-- Structure de la table `documentation`
 --
 
 CREATE TABLE `documentation` (
@@ -207,7 +208,7 @@ CREATE TABLE `documentation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `documentation`
+-- Déchargement des données de la table `documentation`
 --
 
 INSERT INTO `documentation` (`idDocumentation`, `titreDocumentation`, `descriptionDocumentation`, `idCategorieDocumentation`) VALUES
@@ -222,12 +223,13 @@ INSERT INTO `documentation` (`idDocumentation`, `titreDocumentation`, `descripti
 (9, 'Citer ses sources', NULL, 3),
 (10, 'Mettre en page', NULL, 3),
 (11, 'Argumenter', NULL, 3),
-(12, 'Consignes', NULL, 4);
+(12, 'Consignes', NULL, 4),
+(13, 'Utiliser l\'IA', NULL, 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enseignant`
+-- Structure de la table `enseignant`
 --
 
 CREATE TABLE `enseignant` (
@@ -240,7 +242,7 @@ CREATE TABLE `enseignant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `enseignant`
+-- Déchargement des données de la table `enseignant`
 --
 
 INSERT INTO `enseignant` (`idEnseignant`, `nomEnseignant`, `prenomEnseignant`, `mailEnseignant`, `mdpEnseignant`, `autorisationAdmin`) VALUES
@@ -249,7 +251,7 @@ INSERT INTO `enseignant` (`idEnseignant`, `nomEnseignant`, `prenomEnseignant`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Structure de la table `event`
 --
 
 CREATE TABLE `event` (
@@ -267,7 +269,7 @@ CREATE TABLE `event` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `exemple`
+-- Structure de la table `exemple`
 --
 
 CREATE TABLE `exemple` (
@@ -280,7 +282,7 @@ CREATE TABLE `exemple` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groupe_tache`
+-- Structure de la table `groupe_tache`
 --
 
 CREATE TABLE `groupe_tache` (
@@ -290,7 +292,7 @@ CREATE TABLE `groupe_tache` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `groupe_tache`
+-- Déchargement des données de la table `groupe_tache`
 --
 
 INSERT INTO `groupe_tache` (`idGroupeTache`, `titreGroupeTache`, `idCompteEtudiant`) VALUES
@@ -299,20 +301,7 @@ INSERT INTO `groupe_tache` (`idGroupeTache`, `titreGroupeTache`, `idCompteEtudia
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promo`
---
-
-CREATE TABLE `promo` (
-  `idPromo` int(11) NOT NULL,
-  `anneePromo` varchar(4) NOT NULL,
-  `lienNotation` text NOT NULL,
-  `anneeActuelle` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `questionnaire`
+-- Structure de la table `questionnaire`
 --
 
 CREATE TABLE `questionnaire` (
@@ -325,7 +314,7 @@ CREATE TABLE `questionnaire` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rendu`
+-- Structure de la table `rendu`
 --
 
 CREATE TABLE `rendu` (
@@ -339,7 +328,7 @@ CREATE TABLE `rendu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `rendu`
+-- Déchargement des données de la table `rendu`
 --
 
 INSERT INTO `rendu` (`idRendu`, `nomRendu`, `dateRendu`, `lienRendu`, `idCompteEtudiant`, `idCategorieRendu`, `idSujet`) VALUES
@@ -347,12 +336,13 @@ INSERT INTO `rendu` (`idRendu`, `nomRendu`, `dateRendu`, `lienRendu`, `idCompteE
 (118, 'mini-soutenanceZIZIcaca202503121410', '2025-03-12', 'includes/upload/mini-soutenance/mini-soutenanceZIZIcaca202503121410.pdf', 60, 7, 3),
 (119, 'bibliographieZIZIcaca20250312', '2025-03-12', 'includes/upload/bibliographie/bibliographieZIZIcaca20250312.pdf', 60, 2, 4),
 (120, 'mini-soutenanceDYRUrudy20250312', '2025-03-12', 'includes/upload/mini-soutenance/mini-soutenanceDYRUrudy20250312.pdf', 64, 7, 5),
-(121, 'mini-soutenanceDYRUrudy20250312', '2025-03-12', 'includes/upload/mini-soutenance/mini-soutenanceDYRUrudy20250312.pdf', 64, 7, 6);
+(121, 'mini-soutenanceDYRUrudy20250312', '2025-03-12', 'includes/upload/mini-soutenance/mini-soutenanceDYRUrudy20250312.pdf', 64, 7, 6),
+(122, 'fiche-validationDYRUrudy20250313', '2025-03-13', 'includes/upload/fiche-validation/fiche-validationDYRUrudy20250313.pdf', 64, 1, 7);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ressource`
+-- Structure de la table `ressource`
 --
 
 CREATE TABLE `ressource` (
@@ -363,7 +353,7 @@ CREATE TABLE `ressource` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ressource`
+-- Déchargement des données de la table `ressource`
 --
 
 INSERT INTO `ressource` (`idRessource`, `titreRessource`, `lienRessource`, `idCategorieRessources`) VALUES
@@ -393,7 +383,7 @@ INSERT INTO `ressource` (`idRessource`, `titreRessource`, `lienRessource`, `idCa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sujet`
+-- Structure de la table `sujet`
 --
 
 CREATE TABLE `sujet` (
@@ -404,7 +394,7 @@ CREATE TABLE `sujet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sujet`
+-- Déchargement des données de la table `sujet`
 --
 
 INSERT INTO `sujet` (`idSujet`, `titreSujet`, `dateSujet`, `idCompteEtudiant`) VALUES
@@ -413,12 +403,13 @@ INSERT INTO `sujet` (`idSujet`, `titreSujet`, `dateSujet`, `idCompteEtudiant`) V
 (3, 'EAZAZAEAZEAZ', '2025-03-12', 60),
 (4, 'eazeazeazeza', '2025-03-12', 60),
 (5, 'azeazezazazaeaz', '2025-03-12', 64),
-(6, 'eazezsqedqzeaedasq', '2025-03-12', 64);
+(6, 'eazezsqedqzeaedasq', '2025-03-12', 64),
+(7, '', '2025-03-13', 64);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tache`
+-- Structure de la table `tache`
 --
 
 CREATE TABLE `tache` (
@@ -429,55 +420,55 @@ CREATE TABLE `tache` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `bloc_note`
+-- Index pour la table `bloc_note`
 --
 ALTER TABLE `bloc_note`
   ADD PRIMARY KEY (`idNote`),
   ADD KEY `idCompteEtudiant` (`idCompteEtudiant`);
 
 --
--- Indexes for table `categorie_documentation`
+-- Index pour la table `categorie_documentation`
 --
 ALTER TABLE `categorie_documentation`
   ADD PRIMARY KEY (`idCategorieDocumentation`);
 
 --
--- Indexes for table `categorie_rendu`
+-- Index pour la table `categorie_rendu`
 --
 ALTER TABLE `categorie_rendu`
   ADD PRIMARY KEY (`idCategorieRendu`);
 
 --
--- Indexes for table `categorie_ressources`
+-- Index pour la table `categorie_ressources`
 --
 ALTER TABLE `categorie_ressources`
   ADD PRIMARY KEY (`idCategorieRessources`);
 
 --
--- Indexes for table `compte_etudiant`
+-- Index pour la table `compte_etudiant`
 --
 ALTER TABLE `compte_etudiant`
   ADD PRIMARY KEY (`idCompteEtudiant`);
 
 --
--- Indexes for table `documentation`
+-- Index pour la table `documentation`
 --
 ALTER TABLE `documentation`
   ADD PRIMARY KEY (`idDocumentation`),
   ADD KEY `idCategorieDocumentation` (`idCategorieDocumentation`);
 
 --
--- Indexes for table `enseignant`
+-- Index pour la table `enseignant`
 --
 ALTER TABLE `enseignant`
   ADD PRIMARY KEY (`idEnseignant`);
 
 --
--- Indexes for table `event`
+-- Index pour la table `event`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`idEvent`),
@@ -485,34 +476,28 @@ ALTER TABLE `event`
   ADD KEY `idEnseignant` (`idEnseignant`);
 
 --
--- Indexes for table `exemple`
+-- Index pour la table `exemple`
 --
 ALTER TABLE `exemple`
   ADD PRIMARY KEY (`idExemple`),
   ADD KEY `fkExempleCateDocumentation` (`idCategorieDocumentation`);
 
 --
--- Indexes for table `groupe_tache`
+-- Index pour la table `groupe_tache`
 --
 ALTER TABLE `groupe_tache`
   ADD PRIMARY KEY (`idGroupeTache`),
   ADD KEY `idCompteEtudiant` (`idCompteEtudiant`);
 
 --
--- Indexes for table `promo`
---
-ALTER TABLE `promo`
-  ADD PRIMARY KEY (`idPromo`);
-
---
--- Indexes for table `questionnaire`
+-- Index pour la table `questionnaire`
 --
 ALTER TABLE `questionnaire`
   ADD PRIMARY KEY (`idQuestionnaire`),
   ADD KEY `idCompteEtudiant` (`idCompteEtudiant`);
 
 --
--- Indexes for table `rendu`
+-- Index pour la table `rendu`
 --
 ALTER TABLE `rendu`
   ADD PRIMARY KEY (`idRendu`),
@@ -521,144 +506,138 @@ ALTER TABLE `rendu`
   ADD KEY `idSujet` (`idSujet`);
 
 --
--- Indexes for table `ressource`
+-- Index pour la table `ressource`
 --
 ALTER TABLE `ressource`
   ADD PRIMARY KEY (`idRessource`),
   ADD KEY `idCategorieRessources` (`idCategorieRessources`);
 
 --
--- Indexes for table `sujet`
+-- Index pour la table `sujet`
 --
 ALTER TABLE `sujet`
   ADD PRIMARY KEY (`idSujet`),
   ADD KEY `idEtudiant` (`idCompteEtudiant`);
 
 --
--- Indexes for table `tache`
+-- Index pour la table `tache`
 --
 ALTER TABLE `tache`
   ADD PRIMARY KEY (`idTache`),
   ADD KEY `idGroupeTache` (`idGroupeTache`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `bloc_note`
+-- AUTO_INCREMENT pour la table `bloc_note`
 --
 ALTER TABLE `bloc_note`
-  MODIFY `idNote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idNote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `categorie_documentation`
+-- AUTO_INCREMENT pour la table `categorie_documentation`
 --
 ALTER TABLE `categorie_documentation`
   MODIFY `idCategorieDocumentation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `categorie_rendu`
+-- AUTO_INCREMENT pour la table `categorie_rendu`
 --
 ALTER TABLE `categorie_rendu`
   MODIFY `idCategorieRendu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `categorie_ressources`
+-- AUTO_INCREMENT pour la table `categorie_ressources`
 --
 ALTER TABLE `categorie_ressources`
   MODIFY `idCategorieRessources` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `compte_etudiant`
+-- AUTO_INCREMENT pour la table `compte_etudiant`
 --
 ALTER TABLE `compte_etudiant`
   MODIFY `idCompteEtudiant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
--- AUTO_INCREMENT for table `documentation`
+-- AUTO_INCREMENT pour la table `documentation`
 --
 ALTER TABLE `documentation`
-  MODIFY `idDocumentation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idDocumentation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `enseignant`
+-- AUTO_INCREMENT pour la table `enseignant`
 --
 ALTER TABLE `enseignant`
   MODIFY `idEnseignant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `event`
+-- AUTO_INCREMENT pour la table `event`
 --
 ALTER TABLE `event`
   MODIFY `idEvent` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `exemple`
+-- AUTO_INCREMENT pour la table `exemple`
 --
 ALTER TABLE `exemple`
   MODIFY `idExemple` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `groupe_tache`
+-- AUTO_INCREMENT pour la table `groupe_tache`
 --
 ALTER TABLE `groupe_tache`
   MODIFY `idGroupeTache` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT for table `promo`
---
-ALTER TABLE `promo`
-  MODIFY `idPromo` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `questionnaire`
+-- AUTO_INCREMENT pour la table `questionnaire`
 --
 ALTER TABLE `questionnaire`
   MODIFY `idQuestionnaire` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `rendu`
+-- AUTO_INCREMENT pour la table `rendu`
 --
 ALTER TABLE `rendu`
-  MODIFY `idRendu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `idRendu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
--- AUTO_INCREMENT for table `ressource`
+-- AUTO_INCREMENT pour la table `ressource`
 --
 ALTER TABLE `ressource`
   MODIFY `idRessource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `sujet`
+-- AUTO_INCREMENT pour la table `sujet`
 --
 ALTER TABLE `sujet`
-  MODIFY `idSujet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idSujet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tache`
+-- AUTO_INCREMENT pour la table `tache`
 --
 ALTER TABLE `tache`
   MODIFY `idTache` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `bloc_note`
+-- Contraintes pour la table `bloc_note`
 --
 ALTER TABLE `bloc_note`
   ADD CONSTRAINT `bloc_note_ibfk_1` FOREIGN KEY (`idCompteEtudiant`) REFERENCES `compte_etudiant` (`idCompteEtudiant`);
 
 --
--- Constraints for table `documentation`
+-- Contraintes pour la table `documentation`
 --
 ALTER TABLE `documentation`
   ADD CONSTRAINT `documentation_ibfk_1` FOREIGN KEY (`idCategorieDocumentation`) REFERENCES `categorie_documentation` (`idCategorieDocumentation`);
 
 --
--- Constraints for table `exemple`
+-- Contraintes pour la table `exemple`
 --
 ALTER TABLE `exemple`
   ADD CONSTRAINT `fkExempleCateDocumentation` FOREIGN KEY (`idCategorieDocumentation`) REFERENCES `categorie_documentation` (`idCategorieDocumentation`);

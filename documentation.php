@@ -36,11 +36,8 @@
     </div>
 
     <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close-button">&times;</span>
-            <div id="popup-content-inner">
-            </div>
-        </div>
+        <span class="close-button">&times;</span>
+        <div id="popup-content-inner"></div>
     </div>
 </main>
 <?php include "includes/include_script.php";?>
