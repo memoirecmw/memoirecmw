@@ -51,7 +51,47 @@ $(document).ready(function() {
             $("#" + baseMenuId).css("background-color", "#779BDD");
         });
     });
+
+    // POP UP DOCUMENTATION
+    document.addEventListener('DOMContentLoaded', function() {
+        const docLinks = document.querySelectorAll('.documentation-link');
+        const popup = document.getElementById('popup');
+        const popupContentInner = document.getElementById('popup-content-inner');
+        const closeButton = document.querySelector('.close-button');
+        const mainContentOverlay = document.createElement('div');
+
+        mainContentOverlay.classList.add('main-content-overlay');
+        document.body.appendChild(mainContentOverlay);
+
+        docLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const docTitle = this.getAttribute('data-title');
+                const docDescription = this.getAttribute('data-description');
+
+                popupContentInner.innerHTML = `
+                    <div class="popup-title">${docTitle}</div>   
+                    <div class="popup-text">${docDescription}</div>
+                `;
+                popup.style.display = 'block';
+                mainContentOverlay.style.display = 'block';
+            });
+        });
+
+        closeButton.addEventListener('click', function() {
+            popup.style.display = 'none';
+            mainContentOverlay.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === mainContentOverlay) {
+                popup.style.display = 'none';
+                mainContentOverlay.style.display = 'none';
+            }
+        });
+    });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.getElementById('userNote');
 

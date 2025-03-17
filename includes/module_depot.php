@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
         <div class="rendu-info">
             <p>Si tu as déjà importé un fichier pour ce rendu, ils seront automatiquement en <dessous></dessous> rangé si tu en importes un nouveau.</p>
-            <input type="text" name="sujet" placeholder="Sujet" class="sujet-input" required>
+            <input type="text" name="sujet" placeholder="Sujet" class="sujet-input">
             <p>
                 Fichiers déjà rendus :
                 <?php if ($fichier_rendu_existant) : ?>
