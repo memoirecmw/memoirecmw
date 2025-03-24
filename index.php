@@ -10,7 +10,7 @@
 <main class="main-center">
     <?php include 'includes/calendar.php'; ?>
 <?php include "includes/todo.php";?>
-<?php include "includes/notepad.php";?>TEST
+<?php include "includes/notepad.php";?>
 </main>
 
 </body>
