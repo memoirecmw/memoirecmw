@@ -6,12 +6,15 @@
 <?php include 'includes/nav.php'; ?>
 <main class="main-center profile-cont">
 
-        <div class="profile-details">
-            <img src="avatar.png" alt="Avatar" class="avatar">
+
+        <div class="profile-details main-content">
+            <!-- <img src="avatar.png" alt="Avatar" class="avatar"> -->
             <h3><?php echo strtoupper($_SESSION['nom']). " " .$_SESSION['prenom']; ?></h3>
-            <p><?php echo $email; ?></p>
-            <?php echo "<pre>";print_r($_SESSION)?>x
-            <div class="status-indicator">S</div>
+            <p><?php echo $mail; ?></p>
+<!--             <?php echo "<pre>";print_r($_SESSION)?>
+            <div class="status-indicator">S</div> -->
+
+            <h4>Sujet du mémoire : <?php echo $_POST['sujet']; ?></h4>
         </div>
 
 

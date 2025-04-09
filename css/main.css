@@ -50,7 +50,7 @@ button {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 0.9em;
 }
 
 
@@ -180,17 +180,23 @@ main{
 .profile-cont{
   display: flex;
   justify-content: center;
-  flex-direction: column;
+/*  flex-direction: column;*/
 }
 .profile-details{
   width: 100%;
-  display: flex;
+/*  display: flex;*/
 }
 .avatar{
   width: 20%;
 }
 .profile-details h3{
   width: 70%;
+}
+
+.profile-details h4{
+  font-size:0.9em;
+  font-weight: normal;
+  text-decoration:underline;
 }
 
 
