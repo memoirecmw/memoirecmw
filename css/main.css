@@ -667,50 +667,70 @@ li[contenteditable="true"] {
   display: block; /* Afficher au survol */
 }
 
+.error-message {
+  color: red;
+  text-align: left;
+}
 
-
-
-
-/*---------- Calendrier */
-.calendrier {
-
+/*------------------ Fullcalendar --------------------*/
+#fullcalendar {
   width: 500px;
   height: 50vh;
   border: 1px solid #ccc;
   padding: 20px;
   margin: 0 auto;
-                          }
-
-.calendrier table {
-  width: 100%;
-  border-collapse: collapse;
+  border-radius: 20px;
 }
-
-.calendrier th, .calendrier td {
-  border: 1px solid #eee;
-  padding: 8px;
+:root {
+  --fc-today-bg-color: #779BDD;
+  --fc-event-bg-color: #3788d8;
+  --fc-event-border-color: #ffffff00;
+  --fc-overflow-hidden: hidden; /* Ajout de la variable pour overflow: hidden */
+}
+.fc-header-toolbar {
+  background-color: white; /* Fond blanc */
+  border: none; /* Supprimer la bordure */
+  padding: 10px;
   text-align: center;
-}
+  font-weight: bold;
+  }
 
-.calendrier td.rendu {
-  background-color: #f0f8ff;
-}
+  .fc-col-header-cell {
+  text-align: center;
+  font-weight: bold;
+  color: black  ;
+  }
 
-.rendus-jour {
-  margin-top: 5px;
-}
-
-.rendu-item {
-  background-color: #e0e0e0;
+  .fc-day-number {
+  text-align: center;
   padding: 5px;
-  margin: 2px;
-  border-radius: 3px;
-  font-size: 0.8em;
-}
+  }
 
-.error-message {
-  color: red;
-  text-align: left;
+  .fc-day-today {
+  background-color: #ff0000; /* Bleu clair pour le jour sélectionné */
+  border-radius: 50%; /* Cercle pour le jour sélectionné */
+  }
+  .fc-event {
+    border-radius: 50%; /* Transforme le rectangle en cercle */
+    background-color: #ffeb3b; /* Couleur de fond jaune */
+
+    color: black; /* Couleur du texte */
+    padding: 5px; /* Ajoute un peu d'espace autour du texte */
+    text-align: center; /* Centre le texte */
+    width: 50%; /* Définit la largeur du cercle */
+    height: 50%; /* Définit la hauteur du cercle */
+  }
+
+  .fc-event-title {
+  text-align: center;
+  }
+#fullcalendar a {
+    color: black;
+    text-align: center;
+}
+.monthEvent{
+  font-size: 0.8em;
+
 }
 
 /*--------------- DOCU POPUP-----*/

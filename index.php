@@ -1,6 +1,7 @@
 <?php include "includes/header.php"; ?>
 
 <title>Accueil</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <?php include "includes/include_script.php";?>
