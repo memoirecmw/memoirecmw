@@ -45,7 +45,7 @@ if (isset($_SESSION['user_id'])) {
     <div class="notepad-content">
         <form method="POST">
             <textarea id="userNote" name="note" <?php if (!$note) echo 'placeholder="Saisissez votre note ici..."'; ?>><?php if ($note && $note['descriptionNote']) echo htmlspecialchars($note['descriptionNote']); ?></textarea>
-            <button type="submit">Enregistrer</button>
+            <div class="notepad-button"><button class="bouton-bleu" type="submit">Enregistrer</button></div>
         </form>
     </div>
 </div>
