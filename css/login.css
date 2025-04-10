@@ -28,10 +28,20 @@ body {
     margin: 0;
 }
 
+.groupes-inscription{
+    font-size:0.9em;
+    margin-bottom:1em;
+    text-align:left;
+}
+
+#groupe-espace{
+    margin-right:2em;
+}
+
 .login-container {
     background-color: white;
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
     width: 450px;
     display: flex;
@@ -63,12 +73,17 @@ body {
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    margin-top:1.5em;
 /*    font-size: 16px;*/
 
 }
 
 .login-container button:hover {
     background-color: #779BDD;
+}
+
+.login-container button {
+    transition: background-color 0.3s ease;
 }
 
 .error-message {

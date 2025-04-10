@@ -20,7 +20,7 @@ include "includes/popup.php";
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <input type="email" name="mail" placeholder="Email" value="<?php echo isset($mail) ? $mail : ''; ?>">
         <input type="password" name="mdp" placeholder="Mot de passe">
-        <button type="submit">Connexion</button>
+        <button class="bouton-bleu" type="submit">Connexion</button>
     </form>
 </div>
 <?php include "includes/include_script.php";?>

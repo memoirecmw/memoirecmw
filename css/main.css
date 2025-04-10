@@ -53,6 +53,14 @@ button {
   font-size: 0.9em;
 }
 
+.bouton-bleu{
+  transition: background-color 0.3s ease;
+}
+
+.bouton-bleu:hover {
+  background-color: #779BDD;
+}
+
 
 /*----------------------BARRE DE NAVIGATION----------------*/
 
@@ -228,6 +236,7 @@ main{
   font-size:0.9em;
   font-style:italic;
 }
+
 
 
 

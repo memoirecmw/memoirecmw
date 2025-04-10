@@ -81,7 +81,7 @@ try {
 
 
     <form class="main-center" method="POST" action="includes/logout.php">
-        <button type="submit">Déconnexion</button>
+        <button class="bouton-bleu" type="submit">Déconnexion</button>
     </form>
 </main>
 <?php include "includes/include_script.php";?>

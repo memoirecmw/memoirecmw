@@ -27,10 +27,10 @@ include "includes/popup.php";?>
     <label for="prenomEtudiant"></label>
     <input type="text" id="prenomEtudiant" name="prenomEtudiant" placeholder="Prénom" required><br>
 
-    <div>
+    <div class="groupes-inscription">
 
         <input type="radio" id="groupeEtudiant1" name="groupeEtudiant" value="1" required>
-        <label for="groupeEtudiant1">Groupe 1</label>
+        <label for="groupeEtudiant1" id="groupe-espace">Groupe 1</label>
 
         <input type="radio" id="groupeEtudiant2" name="groupeEtudiant" value="2" required>
         <label for="groupeEtudiant2">Groupe 2</label>
