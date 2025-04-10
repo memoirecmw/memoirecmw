@@ -544,9 +544,10 @@ main{
 
 .notepad {
   width: 100%;
-  min-height: 30vh; /* 80% de la hauteur de l'écran */
+  min-height:10vh;
+  max-height: 30vh;
   border: 0 solid #ccc;
-  padding: 1.5em;
+  padding: 2em;
   background-color:#E5EBF8;
   border-radius: 20px;
 }
@@ -590,7 +591,16 @@ main{
 
 
 /*------------ TO DO LIST -------- */
-.todo-list {
+.todo-container {
+  width:40%;
+        height: 50vh;
+        background-color: #F4F4F4;
+        border-radius: 20px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+/*.todo-list {
   width: 500px;
   height: 50vh;
   border-radius: 20px;
@@ -601,12 +611,9 @@ main{
 
 }
 .todo-list {
-  overflow-y: auto; /* Active la barre de défilement sur le conteneur principal */
+  overflow-y: auto; 
 }
 
-.scrollable-content {
-  /* Le contenu scrollable ne nécessite pas de hauteur maximale ici */
-}
 
 .group {
   padding: 20px;
@@ -660,12 +667,12 @@ li[contenteditable="true"] {
   top: 5px;
   right: 5px;
   cursor: pointer;
-  display: none; /* Masquer par défaut */
+  display: none;
 }
 
 .group:hover .delete-group {
-  display: block; /* Afficher au survol */
-}
+  display: block;
+}*/
 
 
 
