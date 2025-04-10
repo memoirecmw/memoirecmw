@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
 
             if ($existingNote) {
                 $stmt = $pdo->prepare("UPDATE bloc_note SET descriptionNote = :note WHERE idCompteEtudiant = :user_id");
-                $notification_message = "Bloc-note enregistré !";
+                $notification_message = "Bloc-notes enregistré !";
                 $notification_type = "success";
             } else {
                 $stmt = $pdo->prepare("INSERT INTO bloc_note (descriptionNote, idCompteEtudiant) VALUES (:note, :user_id)");

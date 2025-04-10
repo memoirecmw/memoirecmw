@@ -112,14 +112,14 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
 
 ?>
 
-<div class="todo-container main-content">
+<div class="todo-container">
     <h2 class="todo-title">To Do</h2>
 
     <div class="new-group">
         <form method="post" class="new-group-form">
             <input type="hidden" name="action_groupe_todo" value="creer">
-            <input type="text" name="titre_nouveau_groupe_todo" placeholder="Nouveau groupe" class="new-group-input" required>
-            <button type="submit" class="new-group-button">+</button>
+            <input type="text" name="titre_nouveau_groupe_todo" placeholder="Nouveau groupe de tâches" class="new-group-input" required>
+            <button type="submit" class="new-group-button bouton-bleu">+</button>
         </form>
     </div>
 
@@ -128,12 +128,28 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
             <?php foreach ($groupes as $groupe): ?>
                 <div class="task-group">
                     <div class="task-group-header">
-                        <h3 class="task-group-title"><?php echo htmlspecialchars($groupe['titreGroupeTache']); ?></h3>
+                        <form method="post" class="edit-inline-form" onsubmit="return submitGroupEdit(this)">
+    <input type="hidden" name="action_groupe_todo" value="renommer">
+    <input type="hidden" name="id_groupe_renommer_todo" value="<?php echo $groupe['idGroupeTache']; ?>">
+    
+    <span class="inline-edit-display" onclick="enableInlineEdit(this)">
+        <?php echo htmlspecialchars($groupe['titreGroupeTache']); ?>
+    </span>
+    
+    <input type="text" name="nouveau_titre_groupe_todo"
+           class="inline-edit-input"
+           value="<?php echo htmlspecialchars($groupe['titreGroupeTache']); ?>"
+           onblur="this.form.submit()" 
+           onkeydown="if(event.key==='Enter'){this.form.submit();}" 
+           style="display:none;">
+</form>
+
                         <div class="task-group-actions">
-                            <button class="edit-group-button" onclick="toggleEditGroup(<?php echo $groupe['idGroupeTache']; ?>)">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <form method="post" style="display:inline;">
+                            <button class="edit-group-button" onclick="enableInlineEditFromButton(this)">
+    <i class="material-icons">edit</i>
+</button>
+
+                            <form method="post">
                                 <input type="hidden" name="action_groupe_todo" value="supprimer">
                                 <input type="hidden" name="id_groupe_supprimer_todo" value="<?php echo $groupe['idGroupeTache']; ?>">
                                 <button type="submit" class="delete-group-button" onclick="return confirm('Supprimer ce groupe et ses tâches ?')">
@@ -143,16 +159,6 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
                         </div>
                     </div>
 
-                    <div id="edit-group-<?php echo $groupe['idGroupeTache']; ?>" class="edit-group-form" style="display:none;">
-                        <form method="post" class="edit-group-actual-form">
-                            <input type="hidden" name="action_groupe_todo" value="renommer">
-                            <input type="hidden" name="id_groupe_renommer_todo" value="<?php echo $groupe['idGroupeTache']; ?>">
-                            <input type="text" name="nouveau_titre_groupe_todo" class="edit-group-input" value="<?php echo htmlspecialchars($groupe['titreGroupeTache']); ?>" required>
-                            <button type="submit" class="save-group-button">
-                                <i class="material-icons">save</i>
-                            </button>
-                        </form>
-                    </div>
 
                     <ul class="task-list">
                         <?php
@@ -167,11 +173,22 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
                                             <input type="hidden" name="action_tache_todo" value="valider">
                                             <input type="hidden" name="id_tache_valider_todo" value="<?php echo $tache['idTache']; ?>">
                                         </form>
-                                        <span class="task-title <?php if ($tache['validation']): ?>task-completed<?php endif; ?>"><?php echo htmlspecialchars($tache['titreTache']); ?></span>
+                                        <span class="inline-edit-display <?php if ($tache['validation']): ?>task-completed<?php endif; ?>" onclick="enableInlineEdit(this)">
+    <?php echo htmlspecialchars($tache['titreTache']); ?>
+</span>
+<input type="text"
+       name="nouveau_titre_tache_todo"
+       class="inline-edit-input"
+       value="<?php echo htmlspecialchars($tache['titreTache']); ?>"
+       onblur="this.form.submit()"
+       onkeydown="if(event.key==='Enter'){this.form.submit();}"
+       style="display:none;">
+
                                         <div class="task-actions">
-                                            <button class="edit-task-button" onclick="toggleEditTask(<?php echo $tache['idTache']; ?>)">
-                                                <i class="material-icons">edit</i>
-                                            </button>
+                                            <button class="edit-task-button" onclick="enableInlineEditFromTaskButton(this)">
+    <i class="material-icons">edit</i>
+</button>
+
                                             <form method="post" style="display:inline;">
                                                 <input type="hidden" name="action_tache_todo" value="supprimer">
                                                 <input type="hidden" name="id_tache_supprimer_todo" value="<?php echo $tache['idTache']; ?>">
@@ -199,7 +216,7 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
                                     <input type="hidden" name="action_tache_todo" value="creer">
                                     <input type="hidden" name="id_groupe_tache_todo" value="<?php echo $groupe['idGroupeTache']; ?>">
                                     <input type="text" name="titre_nouvelle_tache_todo" placeholder="Nouvelle tâche" class="new-task-inline-input" required>
-                                    <button type="submit" class="new-task-inline-button">+</button>
+                                    <button type="submit" class="new-task-inline-button bouton-bleu">+</button>
                                 </form>
                             </li>
                         <?php else: ?>
@@ -219,155 +236,49 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
     </div>
 </div>
 
-<!-- <style>
-    .todo-container {
-        width: 50%;
-        background-color: #f7f7f7;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+<script>
+function enableInlineEdit(spanElement) {
+    const input = spanElement.nextElementSibling;
+    spanElement.style.display = 'none';
+    input.style.display = 'inline-block';
+    input.focus();
+    input.select();
+}
 
-    .todo-title {
-        color: #333;
-        margin-top: 0;
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 1.5em;
-    }
+function submitGroupEdit(form) {
+    // Tu peux log ici si tu veux vérifier
+    return true; // on laisse faire le submit classique
+}
 
-    .new-group-form {
-        display: flex;
-        margin-bottom: 15px;
-    }
+function enableInlineEdit(spanElement) {
+    const input = spanElement.nextElementSibling;
+    spanElement.style.display = 'none';
+    input.style.display = 'inline-block';
+    input.focus();
+    input.select();
+}
 
-    .new-group-input {
-        flex-grow: 1;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        font-size: 16px;
-    }
+function enableInlineEditFromButton(button) {
+    const container = button.closest('.task-group-header');
+    const span = container.querySelector('.inline-edit-display');
+    enableInlineEdit(span);
+}
 
-    .new-group-button {
-        background-color: #eee;
-        color: #555;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-left: 10px;
-    }
 
-    .task-groups-wrapper {
-        max-height: 400px; /* Adjust the height as needed */
-        overflow-y: auto;
-        margin-top: 15px; /* Add some space below the new group input */
-    }
+function enableInlineEdit(spanElement) {
+    const input = spanElement.nextElementSibling;
+    spanElement.style.display = 'none';
+    input.style.display = 'inline-block';
+    input.focus();
+    input.select();
+}
 
-    .task-group {
-        background-color: white;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        padding: 15px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    }
 
-    .task-group-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-    }
+function enableInlineEditFromTaskButton(button) {
+    const container = button.closest('.task-item-content');
+    const span = container.querySelector('.inline-edit-display');
+    enableInlineEdit(span);
+}
+</script>
 
-    .task-group-title {
-        color: #333;
-        margin: 0;
-        font-size: 1.2em;
-    }
 
-    .task-group-actions button {
-        background-color: #555;
-        border: none;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        margin-left: 5px;
-    }
-
-    .task-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .task-item {
-        display: flex;
-        align-items: center;
-        padding: 8px 0;
-    }
-
-    .task-item-content {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
-    }
-
-    .task-checkbox-form {
-        margin-right: 10px;
-    }
-
-    .task-checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        cursor: pointer;
-        appearance: none;
-        background-color: #eee;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .task-checkbox:checked::before {
-        content: '\2713'; /* Checkmark */
-        font-size: 16px;
-        color: #5cb85c;
-    }
-
-    .task-title {
-        flex-grow: 1;
-        font-size: 16px;
-        color: #333;
-        margin-right: 10px; /* Add some space between title and actions */
-    }
-
-    .task-completed {
-        text-decoration: line-through;
-        color: #888;
-    }
-
-    .task-actions {
-        display: flex;
-        align-items: center;
-    }
-
-    .task-actions button {
-        border: none;
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        margin-left: 5px;
-    }
-</style> -->
