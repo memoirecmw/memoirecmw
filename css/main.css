@@ -687,19 +687,21 @@ li[contenteditable="true"] {
   padding: 20px;
   margin: 0 auto;
   border-radius: 20px;
+  
 }
 :root {
   --fc-today-bg-color: #779BDD;
   --fc-event-bg-color: #3788d8;
   --fc-event-border-color: #ffffff00;
   --fc-overflow-hidden: hidden; /* Ajout de la variable pour overflow: hidden */
+  --fc-toolbar-title-font-size: light;
 }
 .fc-header-toolbar {
   background-color: white; /* Fond blanc */
   border: none; /* Supprimer la bordure */
   padding: 10px;
   text-align: center;
-  font-weight: bold;
+
   }
 
   .fc-col-header-cell {
@@ -719,7 +721,7 @@ li[contenteditable="true"] {
   }
   .fc-event {
     border-radius: 50%; /* Transforme le rectangle en cercle */
-    background-color: #ffeb3b; /* Couleur de fond jaune */
+    background-color: #FFCA41; /* Couleur de fond jaune */
 
     color: black; /* Couleur du texte */
     padding: 5px; /* Ajoute un peu d'espace autour du texte */
@@ -728,18 +730,57 @@ li[contenteditable="true"] {
     height: 50%; /* Définit la hauteur du cercle */
   }
 
-  .fc-event-title {
+.fc-event-title {
   text-align: center;
   }
 #fullcalendar a {
     color: black;
     text-align: center;
 }
-.monthEvent{
-  font-size: 0.8em;
-
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
+#event-details {
+  margin-top: 20px; /* Ajouter une marge pour l'espacement */
+  padding: 10px;    /* Ajouter un peu de rembourrage */
+  min-height: 100px; /* Définir une hauteur minimale */
+  /* ou */
+  /* flex: 1;  Utiliser l'espace disponible */
+}
+.monthEvent {
+  font-weight: light; /* Rend le texte en gras */
+}
+
+.dayCircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FFCA41;
+  margin-right: 10px;
+}
+
+
+.dayNumber {
+  font-weight: light;
+  color:white;
+}
+.eventRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Ajouter une marge entre les lignes */
+}
+
+
+
+.eventTitle {
+  margin-left: 5px;
+}
 /*--------------- DOCU POPUP-----*/
 
 .popup {

@@ -24,30 +24,45 @@ foreach ($events as $event) {
 $eventsJson = json_encode($formattedEvents);
 ?>
 
-<div id="fullcalendar"></div>
-<div id="event-titles"></div>
+<div class="calendar-container">
+    <div id="fullcalendar"></div>
+    <div id="event-details"></div>
+</div>
 
 <script>
-     document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('fullcalendar');
-    var eventTitlesEl = document.getElementById('event-titles');
+    var eventDetailsEl = document.getElementById('event-details');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         events: <?php echo $eventsJson; ?>,
         eventRender: function(info) {
             // Ne pas afficher le titre dans la case de l'événement
-        },
-        eventClick: function(info) {
-            displayEventTitle(info.event.title, info.event.start); // Passer le titre et la date
         }
     });
     calendar.render();
 
-    function displayEventTitle(title, date) {
-        // Formater la date (exemple)
-        var formattedDate = date.toLocaleDateString('fr-FR'); // Format français
-  eventTitlesEl.innerHTML = '<div class="monthEvent">' + formattedDate + ' - ' + title + '</div>';
+    // Appeler displayEventDetails lors du chargement du calendrier
+    displayEventDetails();
+
+    function displayEventDetails() {
+        var events = calendar.getEvents(); // Récupérer tous les événements du calendrier
+        var currentMonth = calendar.getDate(); // Récupérer la date du mois affiché
+        var monthEvents = []; // Tableau pour stocker les événements du mois
+
+        events.forEach(function(event) {
+            if (event.start.getMonth() === currentMonth.getMonth() && event.start.getFullYear() === currentMonth.getFullYear()) {
+                monthEvents.push(event); // Ajouter l'événement au tableau
+            }
+        });
+
+        eventDetailsEl.innerHTML = ''; // Effacer le contenu précédent
+
+        monthEvents.forEach(function(event) {
+            var day = event.start.getDate(); // Extraire le jour du mois
+            eventDetailsEl.innerHTML += '<div class="eventRow"><div class="dayCircle"><span class="dayNumber">' + day + '</span></div><span class="eventTitle">' + event.title + '</span></div>'; // Afficher le jour et le titre
+        });
     }
 });
     </script>
