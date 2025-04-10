@@ -28,17 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_groupe_todo'])
                 $sql = "INSERT INTO groupe_tache (titreGroupeTache, idCompteEtudiant) VALUES (:titre, :idEtudiant)";
                 query($pdo, $sql, [':titre' => $_POST['titre_nouveau_groupe_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+         
             }
-            break;
+         
         case 'renommer':
             if (isset($_POST['id_groupe_renommer_todo']) && isset($_POST['nouveau_titre_groupe_todo']) && !empty($_POST['nouveau_titre_groupe_todo'])) {
                 $sql = "UPDATE groupe_tache SET titreGroupeTache = :nouveauTitre WHERE idGroupeTache = :idGroupe AND idCompteEtudiant = :idEtudiant";
                 query($pdo, $sql, [':nouveauTitre' => $_POST['nouveau_titre_groupe_todo'], ':idGroupe' => $_POST['id_groupe_renommer_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+         
             }
-            break;
+           
         case 'supprimer':
             if (isset($_POST['id_groupe_supprimer_todo'])) {
                 $sqlSupprimerTaches = "DELETE FROM tache WHERE idGroupeTache = :idGroupe";
@@ -46,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_groupe_todo'])
                 $sqlSupprimerGroupe = "DELETE FROM groupe_tache WHERE idGroupeTache = :idGroupe AND idCompteEtudiant = :idEtudiant";
                 query($pdo, $sqlSupprimerGroupe, [':idGroupe' => $_POST['id_groupe_supprimer_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+               
             }
-            break;
+           
     }
 }
 
@@ -64,12 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_tache_todo']))
                     $sql = "INSERT INTO tache (idGroupeTache, titreTache, validation) VALUES (:idGroupe, :titre, 0)";
                     query($pdo, $sql, [':idGroupe' => $_POST['id_groupe_tache_todo'], ':titre' => $_POST['titre_nouvelle_tache_todo']]);
                     header("Location: " . $_SERVER['PHP_SELF']);
-                    exit();
+                    
                 } else {
                     echo "<p style='color:red;'>Erreur : Le groupe de tâches spécifié n'existe pas ou ne vous appartient pas.</p>";
                 }
             }
-            break;
+         
         case 'renommer':
             if (isset($_POST['id_tache_renommer_todo']) && isset($_POST['nouveau_titre_tache_todo']) && !empty($_POST['nouveau_titre_tache_todo'])) {
                 $sql = "UPDATE tache t
@@ -78,9 +78,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_tache_todo']))
                                 WHERE t.idTache = :idTache AND gt.idCompteEtudiant = :idEtudiant";
                 query($pdo, $sql, [':nouveauTitre' => $_POST['nouveau_titre_tache_todo'], ':idTache' => $_POST['id_tache_renommer_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+            
             }
-            break;
+         
         case 'supprimer':
             if (isset($_POST['id_tache_supprimer_todo'])) {
                 $sql = "DELETE tache FROM tache
@@ -88,9 +88,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_tache_todo']))
                                 WHERE tache.idTache = :idTache AND gt.idCompteEtudiant = :idEtudiant";
                 query($pdo, $sql, [':idTache' => $_POST['id_tache_supprimer_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+            
             }
-            break;
+          
         case 'valider':
             if (isset($_POST['id_tache_valider_todo'])) {
                 $validation = isset($_POST['validation_todo']) ? 1 : 0;
@@ -100,9 +100,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_tache_todo']))
                                 WHERE t.idTache = :idTache AND gt.idCompteEtudiant = :idEtudiant";
                 query($pdo, $sql, [':validation' => $validation, ':idTache' => $_POST['id_tache_valider_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-                exit();
+          
             }
-            break;
+          
     }
 }
 

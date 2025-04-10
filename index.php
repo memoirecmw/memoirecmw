@@ -10,10 +10,10 @@
 <?php include 'includes/nav.php'; ?>
 <main class="main-center">
     <section class="cal-todo">
-<?php include 'includes/calendar.php'; ?>
-<?php include "includes/todo.php";?>
+        <?php include 'includes/calendar.php'; ?>
+        <?php include "includes/todo.php"; ?> <!-- Vérifiez que cette inclusion est correcte -->
     </section>
-<?php include "includes/notepad.php";?>
+    <?php include "includes/notepad.php"; ?>
 </main>
 
 </body>
