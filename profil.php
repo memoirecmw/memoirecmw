@@ -69,6 +69,7 @@ try {
             <div id="profil-details">
                 <h3><?php echo strtoupper($_SESSION['nom']). " " .$_SESSION['prenom']; ?></h3>
                 <p class="it-mail"><?php echo $email; ?></p>
+                <div> <?php echo "Groupe ". $_SESSION['groupeEtudiant']; ?></div>
             </div>
 <!--             <?php echo "<pre>";print_r($_SESSION)?>
             <div class="status-indicator">S</div> -->    

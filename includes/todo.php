@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_groupe_todo'])
                 $sql = "INSERT INTO groupe_tache (titreGroupeTache, idCompteEtudiant) VALUES (:titre, :idEtudiant)";
                 query($pdo, $sql, [':titre' => $_POST['titre_nouveau_groupe_todo'], ':idEtudiant' => $idUtilisateurConnecte]);
                 header("Location: " . $_SERVER['PHP_SELF']);
-         
+
             }
          
         case 'renommer':
