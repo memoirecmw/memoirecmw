@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
     showNotification("<?php echo $notification_message; ?>", "<?php echo $notification_type; ?>");
     <?php endif; ?>
 </script>
-<div class="notepad">
+<div class="notepad main-content">
     <div id="notepadTitle">Bloc-notes</div>
     <div class="notepad-content">
         <form method="POST">

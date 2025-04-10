@@ -70,17 +70,30 @@ nav {
 }
 
 .profil {
+  height:2em;
   position: absolute;
   left: 0.5em;
   bottom: 1em;
   font-size: 1.2em;
   padding: 0.6em 1em;
-  border-radius: 20px;
+  border-radius: 40px;
   width: calc(100% - 3em);
   transition: background-color 0.1s ease-in-out; /* Transition ajoutée ici */
 }
 
-.li-nav {
+.avatar{
+  position:absolute;
+  max-height:2em;
+  bottom: 0.5em;
+}
+
+.profil li{
+list-style-type: none;
+padding-inline-start: 3em;
+padding-top:0.4em;
+}
+
+.li-nav{
   list-style-type: none;
   padding-inline-start: 1em;
   padding-top: 0.6em;
@@ -177,27 +190,46 @@ main{
 
 
 /*-------------------- PROFIL -----------------------------*/
-.profile-cont{
+/*.profile-cont{
   display: flex;
   justify-content: center;
-/*  flex-direction: column;*/
-}
-.profile-details{
+  flex-direction: column;
+}*/
+
+.profil-haut{
+  height:8rem;
   width: 100%;
-/*  display: flex;*/
-}
-.avatar{
-  width: 20%;
-}
-.profile-details h3{
-  width: 70%;
+  display: flex;
+  flex-direction: row;
 }
 
-.profile-details h4{
+.profil-haut img{
+  width: 8rem;
+  height:8rem;
+  margin-right:2rem;
+}
+
+#profil-details{
+  flex:auto;
+}
+
+.sujet-profil{
   font-size:0.9em;
+}
+
+.sujet-profil h4{
+  margin-top:4rem;
+  display: inline-block;
   font-weight: normal;
   text-decoration:underline;
 }
+
+.it-mail{
+  font-size:0.9em;
+  font-style:italic;
+}
+
+
 
 
 
@@ -501,7 +533,8 @@ main{
 }
 
 .notepad {
-  width: calc(100% - 200px); /* Largeur totale - largeur de la barre latérale - marge */
+/*  width: calc(100% - 200px); /* Largeur totale - largeur de la barre latérale - marge */
+  width: 100%;
   min-height: 30vh; /* 80% de la hauteur de l'écran */
   border: 0 solid #ccc;
   padding: 20px;

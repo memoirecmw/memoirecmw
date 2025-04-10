@@ -36,5 +36,5 @@
         </ul>
     </ul>
 
-    <a href="profil.php"><div class="profil">Profil</div></a>
+    <a href="profil.php"><div class="profil"><img src="img/icone-profil.png" class="avatar"><li>Profil</li></div></a>
 </nav>

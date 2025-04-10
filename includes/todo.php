@@ -120,7 +120,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['validateTask']) && is
     }
 }
 ?>
-<div class="todo-list">
+
+
+
+
+
+
+
+<div class="todo-list">To Do
     <input type="text" placeholder="Nouveau groupe" class="new-group-input">
 
     <div class="scrollable-content">
