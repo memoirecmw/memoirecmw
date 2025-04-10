@@ -168,7 +168,7 @@ $groupes = fetchAll($pdo, $sqlGroupes, [':idEtudiant' => $idUtilisateurConnecte]
                             <?php foreach ($taches as $tache): ?>
                                 <li class="task-item">
                                     <div class="task-item-content">
-                                        <form method="post" class="task-checkbox-form" style="display:inline;">
+                                        <form method="post" class="task-checkbox-form">
                                             <input type="checkbox" name="validation_todo" value="1" <?php if ($tache['validation']): ?>checked<?php endif; ?> onchange="this.form.submit()" class="task-checkbox">
                                             <input type="hidden" name="action_tache_todo" value="valider">
                                             <input type="hidden" name="id_tache_valider_todo" value="<?php echo $tache['idTache']; ?>">

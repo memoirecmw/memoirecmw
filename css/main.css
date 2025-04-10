@@ -677,6 +677,10 @@ main{
    font-weight: normal;
 }
 
+.inline-edit-display{
+  font-size:0.9em;
+}
+
 .task-group-actions {
     display: flex;
     align-items: center;
@@ -687,8 +691,8 @@ main{
     color: #779BDD;
     border: none;
     border-radius: 20px;
-    width: 30px; /* Taille fixe pour les boutons */
-    height: 30px; /* Taille fixe pour les boutons */
+    width: 25px; /* Taille fixe pour les boutons */
+    height: 25px; /* Taille fixe pour les boutons */
     padding: 0; /* Suppression du padding */
     cursor: pointer;
     margin-left: 5px;
@@ -698,7 +702,7 @@ main{
 }
 
 .task-group-actions button i.material-icons {
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 30px; /* Alignement vertical */
 }
 
@@ -710,7 +714,6 @@ main{
 .task-group-actions {
     display: flex;
     align-items: center;
-    gap: 5px; /* Optionnel, pour espacer les boutons joliment */
 }
 
 .task-group-actions form {
@@ -720,6 +723,45 @@ main{
     align-items: center;
 }
 
+
+
+.task-actions button {
+    background-color: #E5EBF8;
+    color: #779BDD;
+    border: none;
+    border-radius: 20px;
+    width: 20px; /* Taille fixe pour les boutons */
+    height: 20px; /* Taille fixe pour les boutons */
+    padding: 0; /* Suppression du padding */
+    cursor: pointer;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-actions button i.material-icons {
+    font-size: 1em;
+    line-height: 30px; /* Alignement vertical */
+}
+
+.task-actions .delete-task-button {
+    background-color: #FFEFC6;
+    color: #FF8B59;
+    margin-left: 5px;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+.task-actions form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
 
 
 
@@ -732,7 +774,7 @@ main{
 .task-item {
     display: flex;
     align-items: center;
-    padding: 8px 0;
+    margin-top:-25px;
 }
 
 .task-item-content {
@@ -740,6 +782,7 @@ main{
     align-items: center;
     flex-grow: 1;
 }
+
 
 .task-checkbox-form {
     margin-right: 10px;
@@ -757,6 +800,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top:22px;
 }
 
 .task-checkbox:checked::before {
@@ -778,7 +822,7 @@ main{
     color: #888;
 }
 
-.task-actions {
+/*.task-actions {
     display: flex;
     align-items: center;
 }
@@ -795,7 +839,7 @@ main{
     align-items: center;
     cursor: pointer;
     margin-left: 5px;
-}
+}*/
 
 .new-task-inline {
     list-style: none;
