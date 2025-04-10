@@ -609,6 +609,8 @@ main{
 
 .todo-container {
 /*    margin:4rem 4rem 0rem 2rem;*/
+    flex:auto;
+    margin-left:4rem;
     width: 40%;
     height: 50vh;
     background-color: #F4F4F4;
