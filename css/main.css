@@ -520,6 +520,10 @@ main{
   display: inline;
   font-weight: bold;
 }
+
+
+
+
 /*------------------ NOTE PAD --------------------*/
 #userNote:disabled {
   background-color: #E5EBF8;
@@ -543,6 +547,7 @@ main{
 }
 
 .notepad {
+  margin:0rem 4rem 4rem 4rem;
   width: 100%;
   min-height:10vh;
   max-height: 30vh;
@@ -591,9 +596,20 @@ main{
 
 
 /*------------ TO DO LIST -------- */
+
+.cal-todo{
+  margin:4rem 4rem 0rem 4rem;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+}
+
+
+
 .todo-container {
-    margin:4rem 4rem 0rem 2rem;
-    width: 30%;
+/*    margin:4rem 4rem 0rem 2rem;*/
+    width: 40%;
     height: 50vh;
     background-color: #F4F4F4;
     border-radius: 20px;
@@ -651,8 +667,6 @@ main{
                        (1.5em + /* todo-title font-size */
                         20px + /* todo-title margin-bottom */
                         (2 * 20px) + /* todo-container padding-top + padding-bottom */
-                        (display: flex existe donc potentiellement marge entre new-group et wrapper)
-                        (display: flex existe donc potentiellement marge entre dernier groupe et wrapper)
                         (16px + 2 * 10px) + /* new-group-input font-size + padding */
                         15px)); /* new-group-form margin-bottom */
 }
@@ -964,9 +978,10 @@ main{
     text-align: center;
 }
 .calendar-container {
+/*  margin:4rem 0rem 0rem 4rem;*/
   display: flex;
   flex-direction: column;
-  padding: 10px;
+/*  padding: 10px;*/
 }
 
 #event-details {

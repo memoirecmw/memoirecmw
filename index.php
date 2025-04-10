@@ -9,8 +9,10 @@
 <body>
 <?php include 'includes/nav.php'; ?>
 <main class="main-center">
+    <section class="cal-todo">
 <?php include 'includes/calendar.php'; ?>
 <?php include "includes/todo.php";?>
+    </section>
 <?php include "includes/notepad.php";?>
 </main>
 
