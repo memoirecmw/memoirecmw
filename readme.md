@@ -1,9 +1,5 @@
-Voici un modèle de README pour le projet **memoirecmw** basé sur la structure et les fichiers présents dans le dépôt :  
-(Tu pourras l’adapter selon ta vision et compléter les sections manquantes.)
 
----
-
-# memoirecmw
+# MemoireCMW
 
 Plateforme web de gestion et de suivi des mémoires pour étudiants et enseignants, réalisée en PHP, JavaScript et MySQL.
 
