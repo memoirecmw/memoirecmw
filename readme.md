@@ -89,9 +89,11 @@ memoirecmw/
 
 ---
 
-## 👤 Auteur
+## 👤 Auteur.ice.s
 
 - **Xuan-Minh TRAN** — Développement & intégration du site web
+- **Sakina DOUIOU** — Design, Conception & CSS
+
 
 ---
 
@@ -112,5 +114,3 @@ N’hésite pas à contribuer, signaler un bug ou proposer des idées d’améli
 Pour toute question, contacte-moi sur GitHub.
 
 ---
-
-Tu veux d’autres badges, une version anglaise, ou une section équipe/partenaires ? Dis-le-moi !
