@@ -10,7 +10,7 @@
 
 <p align="center">
   Plateforme web de gestion et de suivi des mémoires pour étudiants et enseignants.<br>
-  <a href="https://memoirecmw.mastercmw.com/">🌐 Voir le site en ligne</a>
+  <a href="https://memoire.mastercmw.com/">🌐 Voir le site en ligne</a>
 </p>
 
 ---
