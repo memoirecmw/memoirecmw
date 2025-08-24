@@ -1,93 +1,116 @@
 
-# MemoireCMW
+<h1 align="center">📚 Mémoire CMW</h1>
 
-Plateforme web de gestion et de suivi des mémoires pour étudiants et enseignants, réalisée en PHP, JavaScript et MySQL.
+<p align="center">
+  <a href="https://memoirecmw.mastercmw.com/"><img src="https://img.shields.io/badge/Site%20en%20ligne-mastercmw.com-000?logo=google-chrome&logoColor=white" alt="Site en ligne"></a>
+  <img src="https://img.shields.io/github/package-json/v/memoirecmw/memoirecmw?color=blue&label=version" alt="Version">
+  <img src="https://img.shields.io/github/license/memoirecmw/memoirecmw?color=green" alt="License">
+  <img src="https://img.shields.io/github/last-commit/memoirecmw/memoirecmw?color=orange" alt="Last commit">
+</p>
 
-## 🚀 Objectifs
+<p align="center">
+  Plateforme web de gestion et de suivi des mémoires pour étudiants et enseignants.<br>
+  <a href="https://memoirecmw.mastercmw.com/">🌐 Voir le site en ligne</a>
+</p>
 
-- Permettre aux étudiants de déposer, suivre et valider les différentes étapes de leur mémoire (bibliographie, plan, fiches terrain, mini-soutenance…)
-- Offrir aux enseignants une interface de suivi et de validation centralisée
-- Centraliser les ressources, documents et échéances liés aux mémoires
+---
 
-## 🛠️ Technologies utilisées
+## 🛠️ Stack technique
 
-- **Backend** : PHP 8+
-- **Frontend** : HTML5, CSS3, JavaScript (ES6+), CSS custom
-- **Base de données** : MySQL/MariaDB
-- **Autres** : fichiers CSV/SQL pour l’import/export, gestion de sessions et rôles
+| Frontend         | Backend | Base de données | Import/Export | Déploiement      |
+|------------------|---------|-----------------|--------------|------------------|
+| HTML5, CSS3, JS  | PHP 8+  | MySQL/MariaDB   | CSV/SQL      | Serveur mutualisé|
 
-## 📁 Structure du projet
+---
 
-```
-memoirecmw/
-│
-├── .idea/                   # Configurations IDE (IntelliJ)
-├── .vscode/                 # Configurations VSCode
-├── css/                     # Feuilles de style
-├── font/                    # Polices
-├── img/                     # Images
-├── includes/                # Fichiers PHP inclus (fonctions, config, etc.)
-├── js/                      # Scripts JavaScript
-│
-├── compte_etudiant.sql      # Script SQL pour comptes étudiants
-├── connexion.php            # Page de connexion
-├── documentation.php        # Documentation utilisateur
-├── etudiant.csv             # Import CSV des étudiants
-├── index.php                # Page d’accueil
-├── memoirecmw.sql           # Structure principale de la base de données
-├── module_connexion.php     # Module de gestion connexion
-├── profil.php               # Gestion des profils utilisateurs
-├── register.php             # Inscription étudiant
-├── registerEnseignant.php   # Inscription enseignant
-├── rendu-bibliographie.php  # Dépôt de la bibliographie
-├── rendu-fiche-terrain.php  # Dépôt fiche de terrain
-├── rendu-fiche-validation.php # Validation des fiches
-├── rendu-mini-soutenance.php  # Dépôt mini-soutenance
-├── rendu-plan.php           # Dépôt du plan
-├── rendu.sql                # Script SQL pour les rendus
-├── reset.php                # Réinitialisation de mot de passe
-├── ressources.php           # Ressources utiles
-├── sujet.sql                # Script SQL pour les sujets
-└── .DS_Store                # Fichier système MacOS (inutile en prod)
-```
+## 🚀 Installation & Lancement
 
-## ⚡ Installation
+### Prérequis
 
-1. **Cloner le repo**
+- Serveur local (MAMP, WAMP, XAMPP…)
+- Client base de données (phpMyAdmin, Sequel Pro…)
+- Fichiers de base de données `.sql` et/ou `.csv`
+
+### Étapes
+
+1. **Cloner le dépôt**
    ```bash
    git clone https://github.com/memoirecmw/memoirecmw.git
    ```
 2. **Créer la base de données**
-   - Importer `memoirecmw.sql` (et autres fichiers SQL nécessaires) dans votre serveur MySQL/MariaDB.
-   - (Optionnel) Importer les étudiants depuis `etudiant.csv` si besoin.
+   - Créez une BDD nommée `memoirecmw`
+   - Importez le fichier `memoirecmw.sql` (et autres fichiers SQL/CSV selon le besoin)
 3. **Configurer la connexion**
-   - Vérifier les identifiants de connexion à la BDD dans les fichiers PHP concernés (`includes/`, `connexion.php`…).
-4. **Lancer le serveur local**
-   - Placez le dossier sur votre serveur local (MAMP, WAMP, XAMPP…).
-   - Accédez à `http://localhost/memoirecmw`.
-
-## 👥 Utilisateurs & rôles
-
-- **Étudiants** : Inscription, dépôt, suivi des documents, consultation des ressources
-- **Enseignants** : Validation, contrôle, feedback, gestion des échéances
-
-## 📄 Fonctionnalités principales
-
-- Authentification et gestion des utilisateurs (étudiants/enseignants)
-- Suivi et dépôt des différentes étapes du mémoire
-- Validation et feedback sur chaque étape
-- Import/export de données (CSV/SQL)
-- Documentation intégrée
-
-## 🎨 Démo & captures d’écran
-
-*(Ajoute ici des screenshots ou un lien de démo si disponible)*
-
-## 📜 Licence
-
-*(À compléter selon ton choix de licence. Par défaut, le projet ne spécifie pas de licence.)*
+   - Vérifiez les identifiants de la BDD dans les fichiers PHP concernés (`includes/`, `connexion.php`, etc.) :
+     ```php
+     $servername = "localhost";
+     $database = "memoirecmw";
+     $username = "root";
+     $password = "root"; // généralement "root" sous MAMP
+     ```
+4. **Lancer le site**
+   - Placez le dossier sur votre serveur local
+   - Accédez à [http://localhost/memoirecmw](http://localhost/memoirecmw) via votre navigateur
 
 ---
 
-**N’hésite pas à adapter ou compléter ce modèle selon les spécificités de ton projet !**  
-[Voir le repo sur GitHub](https://github.com/memoirecmw/memoirecmw)
+## 🗂️ Structure du projet
+
+```
+memoirecmw/
+│
+├── css/                     # Feuilles de style
+├── font/                    # Polices
+├── img/                     # Images (dont logo & preview)
+├── includes/                # Fichiers PHP inclus (fonctions, config, etc.)
+├── js/                      # Scripts JavaScript
+│
+├── compte_etudiant.sql
+├── connexion.php
+├── documentation.php
+├── etudiant.csv
+├── index.php
+├── memoirecmw.sql
+├── module_connexion.php
+├── profil.php
+├── register.php
+├── registerEnseignant.php
+├── rendu-bibliographie.php
+├── rendu-fiche-terrain.php
+├── rendu-fiche-validation.php
+├── rendu-mini-soutenance.php
+├── rendu-plan.php
+├── rendu.sql
+├── reset.php
+├── ressources.php
+├── sujet.sql
+└── README.md
+```
+
+---
+
+## 👤 Auteur
+
+- **Xuan-Minh TRAN** — Développement & intégration du site web
+
+---
+
+## ⚖️ Licence
+
+Ce projet utilise plusieurs licences selon les composants (code, ressources, images).  
+Pour plus d’informations, voir [LICENSE.md](LICENSE.md).
+
+---
+
+<p align="center">
+  <img src="img/preview.png" alt="Aperçu du site" width="60%"/>
+</p>
+
+---
+
+N’hésite pas à contribuer, signaler un bug ou proposer des idées d’amélioration !  
+Pour toute question, contacte-moi sur GitHub.
+
+---
+
+Tu veux d’autres badges, une version anglaise, ou une section équipe/partenaires ? Dis-le-moi !
