@@ -100,7 +100,7 @@ memoirecmw/
 ## ⚖️ Licence
 
 Ce projet utilise plusieurs licences selon les composants (code, ressources, images).  
-Pour plus d’informations, voir [LICENSE.md]([https://github.com/memoirecmw/memoirecmw/LICENSE.md](https://github.com/memoirecmw/memoirecmw-projet/blob/main/LICENCE.md).
+Pour plus d’informations, voir [LICENSE.md](https://github.com/memoirecmw/memoirecmw-projet/blob/main/LICENCE.md).
 
 ---
 
