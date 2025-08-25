@@ -2,7 +2,7 @@
 <h1 align="center">📚 Mémoire CMW</h1>
 
 <p align="center">
-  <a href="https://memoirecmw.mastercmw.com/"><img src="https://img.shields.io/badge/Site%20en%20ligne-mastercmw.com-000?logo=google-chrome&logoColor=white" alt="Site en ligne"></a>
+  <a href="https://memoire.mastercmw.com/"><img src="https://img.shields.io/badge/Site%20en%20ligne-mastercmw.com-000?logo=google-chrome&logoColor=white" alt="Site en ligne"></a>
   <img src="https://img.shields.io/github/package-json/v/memoirecmw/memoirecmw?color=blue&label=version" alt="Version">
   <img src="https://img.shields.io/github/license/memoirecmw/memoirecmw?color=green" alt="License">
   <img src="https://img.shields.io/github/last-commit/memoirecmw/memoirecmw?color=orange" alt="Last commit">
